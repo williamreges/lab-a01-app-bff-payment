@@ -1,0 +1,29 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: lab-a01-app-bff-payment
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
+            loggerLevel: full
+      autoconfiguration:
+        jackson:
+          enabled: true
+      circuitbreaker:
+        enabled: true
+        alphanumeric-ids:
+          enabled: true
+    config:
+      enabled: false
+
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
