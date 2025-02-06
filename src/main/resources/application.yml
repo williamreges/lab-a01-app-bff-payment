@@ -9,7 +9,7 @@ eureka:
 
 spring:
   application:
-    name: lab-a01-app-bff-payment
+    name: app-bff-payment
 
   cloud:
     openfeign:

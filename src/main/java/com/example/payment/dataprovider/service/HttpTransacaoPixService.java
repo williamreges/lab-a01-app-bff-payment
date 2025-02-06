@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 
-@FeignClient(name = "lab-a01-app-repository-payment", configuration = FeignConfig.class)
+@FeignClient(name = "app-repository-payment", configuration = FeignConfig.class)
 public interface HttpTransacaoPixService {
 
     @GetMapping(
