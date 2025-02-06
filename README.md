@@ -69,11 +69,13 @@ Instale as dependencies do projeto
   mvn clean install
 ```
 
-Start o serviço e entre na porta http://localhost:8100/
+Start o serviço
 
 ```bash
   mvn spring-boot:run
 ```
+
+Entre na porta http://localhost:8100/actuator/health e se retornar `status: "UP"` é porque está rodando com sucesso.
 
 Para testar uma requisição de operação de pagamento via PIX execute o curl abaixo e a resposta será um UUID.
 
