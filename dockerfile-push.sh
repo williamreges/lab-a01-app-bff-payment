@@ -1,5 +1,5 @@
 VERSION=V1
-NAME_IMAGE=lab-a01-infra-service-registry
+NAME_IMAGE=lab-a01-app-bff-payment
 NAME_REPO=williamreges
 
 
