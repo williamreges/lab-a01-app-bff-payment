@@ -2,7 +2,7 @@ package com.example.payment.dataprovider.service;
 
 import com.example.payment.dataprovider.service.model.input.TransacaoPixIn;
 import com.example.payment.dataprovider.service.model.output.TransacaoPixOut;
-import com.example.payment.infraestructure.configuration.FeignConfig;
+import com.example.payment.infraestructure.configuration.feign.sts.StsClientCredentialsConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 
-@FeignClient(name = "${name.service.repository}", configuration = FeignConfig.class)
+@FeignClient(name = "${name.service.repository}", configuration = {StsClientCredentialsConfig.class})
 public interface HttpTransacaoPixService {
 
     @GetMapping(
