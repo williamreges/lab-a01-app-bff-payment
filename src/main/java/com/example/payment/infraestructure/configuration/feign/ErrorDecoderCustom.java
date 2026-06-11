@@ -1,4 +1,4 @@
-package com.example.payment.infraestructure.configuration;
+package com.example.payment.infraestructure.configuration.feign;
 
 import feign.FeignException;
 import feign.Response;

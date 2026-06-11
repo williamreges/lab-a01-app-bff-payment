@@ -5,6 +5,12 @@ name:
   service:
     repository: app-repository-payment
 
+sts:
+  url: http://localhost:7777
+  client:
+    id: 91fa46ac-dfd5-41cc-b3a6-5ed186421df1
+    secret: c1be44b0-3119-4a5b-9f54-cc6a2fd06e0e
+
 management:
   endpoints:
     web:
