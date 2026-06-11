@@ -21,7 +21,7 @@ como o Eureka.
 
 Instale alugmas ferramentas como
 
-* Java 17
+* Java 21
 * Maven
 * Spring Cloud Eureka
 
