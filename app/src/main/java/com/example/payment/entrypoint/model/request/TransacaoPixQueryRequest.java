@@ -2,19 +2,21 @@ package com.example.payment.entrypoint.model.request;
 
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 public record TransacaoPixQueryRequest(
 
 
-        String codigoTrancacao,
+        UUID codigoTrancacao,
 
-        String codigoPessoa,
+        UUID codigoPessoa,
 
         BigDecimal valorTrancacao,
 
-        Date dataTrancacao,
+        LocalDateTime dataTrancacao,
 
-        String codigoBeneficiario
+        UUID codigoBeneficiario
 ) {
 }
