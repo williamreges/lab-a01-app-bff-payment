@@ -10,6 +10,10 @@ public class WireMockTestConfiguration {
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     public WireMockServer wireMockServer() {
-        return new WireMockServer(WireMockConfiguration.options().port(8100));
+        return new WireMockServer(
+                WireMockConfiguration
+                        .options()
+                        .port(8100)
+                        .usingFilesUnderClasspath("wiremock"));
     }
 }

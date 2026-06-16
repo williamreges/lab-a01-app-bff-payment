@@ -4,11 +4,8 @@ import com.example.payment.bdd.common.RestClient;
 import com.example.payment.bdd.loader.TransacaoPixDataLoader;
 import io.cucumber.spring.ScenarioScope;
 import io.restassured.response.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
 
 @Component
 @ScenarioScope
@@ -17,21 +14,17 @@ public class TransacaoPixGetScenario {
     private static final String BASE_URI = "http://localhost";
     private static final String ENDPOINT = "/transacao-pix/{id}";
 
-    @LocalServerPort
-    private int serverPort;
+    private final TransacaoPixDataLoader dataLoader;
 
-    @Autowired
-    private TransacaoPixDataLoader dataLoader;
-
-    private RestClient restClient;
+    private final RestClient restClient;
 
     private Response response;
 
-
-    @PostConstruct
-    public void init() {
+    public TransacaoPixGetScenario(@LocalServerPort int serverPort, TransacaoPixDataLoader dataLoader) {
+        this.dataLoader = dataLoader;
         this.restClient = new RestClient(BASE_URI, serverPort);
     }
+
 
     public void beforeScenario() {
         dataLoader.clean();
@@ -57,7 +50,7 @@ public class TransacaoPixGetScenario {
         return response;
     }
 
-    public void afterScenario(){
+    public void afterScenario() {
         dataLoader.clean();
     }
 

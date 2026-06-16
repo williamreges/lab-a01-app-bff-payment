@@ -10,14 +10,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class TransacaoPixGetStepdefs {
 
 
-    @Autowired
-    private TransacaoPixGetScenario pixGetScenario;
+    private final TransacaoPixGetScenario pixGetScenario;
 
+    public TransacaoPixGetStepdefs(TransacaoPixGetScenario pixGetScenario) {
+        this.pixGetScenario = pixGetScenario;
+    }
 
     @Before
     public void beforeScenario() {

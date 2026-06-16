@@ -2,16 +2,19 @@ package com.example.payment.bdd.loader;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.wiremock.spring.InjectWireMock;
 
 @Component
 public class TransacaoPixDataLoader {
 
     private static final String ENDPOINT = "/transacao-pix/";
 
-    @Autowired
-    private WireMockServer wireMockServer;
+    private final WireMockServer wireMockServer;
+
+    public TransacaoPixDataLoader(@InjectWireMock WireMockServer wireMockServer) {
+        this.wireMockServer = wireMockServer;
+    }
 
     public void loaderResponseSuccess(String codigoTransacao) {
 
