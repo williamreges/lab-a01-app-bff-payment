@@ -4,6 +4,7 @@ import com.example.payment.bdd.scenario.TransacaoPixGetScenario;
 import com.example.payment.entrypoint.model.response.TransacaoPixResponse;
 import com.example.payment.infraestructure.exception.model.ResponseExceptionCustom;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,9 +19,19 @@ public class TransacaoPixGetStepdefs {
     private TransacaoPixGetScenario pixGetScenario;
 
 
+    @Before
+    public void beforeScenario() {
+        pixGetScenario.beforeScenario();
+    }
+
     @Given("que existe uma transação Pix com o id {string}")
     public void queExisteUmaTransaçãoPixComOId(String codigoTransacao) {
-        pixGetScenario.gerarMassa(codigoTransacao);
+        pixGetScenario.generateResponseSuccess(codigoTransacao);
+    }
+
+    @Given("que não existe uma transação Pix com o id {string}")
+    public void queNãoExisteUmaTransaçãoPixComOId(String codigoTransacao) {
+        pixGetScenario.generateResponseError(codigoTransacao);
     }
 
     @When("eu buscar a transação Pix pelo id {string}")
@@ -45,7 +56,6 @@ public class TransacaoPixGetStepdefs {
 
     @After
     public void doSomethingAfter(Scenario scenario) {
-        pixGetScenario.deleteAll();
+        pixGetScenario.afterScenario();
     }
-
 }
