@@ -19,3 +19,4 @@ sts:
 name:
   service:
     repository: app-repository-payment
+    port: 8100

@@ -20,6 +20,9 @@ public class EurekaDiscoveryClientConfiguration implements DiscoveryClient {
     @Value("${name.service.repository}")
     private String nameService;
 
+    @Value("${name.service.port}")
+    private Integer portService;
+
     @Override
     public String description() {
         return "Test DiscoveryClient that maps app-repository-payment to localhost:8100";
@@ -28,7 +31,7 @@ public class EurekaDiscoveryClientConfiguration implements DiscoveryClient {
     @Override
     public List<ServiceInstance> getInstances(String serviceId) {
         if (nameService.equals(serviceId)) {
-            var instance = new DefaultServiceInstance(serviceId + "-1", serviceId, "localhost", 8100, false);
+            var instance = new DefaultServiceInstance(serviceId + "-1", serviceId, "localhost", portService, false);
             return List.of(instance);
         }
         return Collections.emptyList();
