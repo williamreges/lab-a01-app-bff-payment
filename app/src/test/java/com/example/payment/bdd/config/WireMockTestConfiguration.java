@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WireMockTestConfiguration {
 
-    @Value("${name.service.port}")
-    private Integer portService;
+    @Value("${wiremock.port}")
+    private Integer portWiremock;
 
 
     @Bean(initMethod = "start", destroyMethod = "stop")
@@ -18,7 +18,7 @@ public class WireMockTestConfiguration {
         return new WireMockServer(
                 WireMockConfiguration
                         .options()
-                        .port(portService)
+                        .port(portWiremock)
                         .usingFilesUnderClasspath("wiremock"));
     }
 }

@@ -19,4 +19,14 @@ sts:
 name:
   service:
     repository: app-repository-payment
-    port: 8100
+    port: 8089
+
+wiremock:
+  host: localhost
+  port: 8089
+  files-directory: src/test/resources/wiremock
+  record:
+    target-url: http://localhost:8000/
+    make-stubs-persistent: true
+    ignore-repeat-requests: true
+    match-request-body-with-equal-to-json: true
