@@ -22,9 +22,8 @@ name:
     port: 8089
 
 wiremock:
-  host: localhost
   port: 8089
-  files-directory: src/test/resources/wiremock
+  files-classpath: wiremock
   record:
     target-url: http://localhost:8000/
     make-stubs-persistent: true

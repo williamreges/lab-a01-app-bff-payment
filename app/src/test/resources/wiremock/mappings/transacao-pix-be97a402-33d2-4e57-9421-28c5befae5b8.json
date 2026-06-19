@@ -1,0 +1,25 @@
+{
+  "id" : "be97a402-33d2-4e57-9421-28c5befae5b8",
+  "name" : "transacao-pix",
+  "request" : {
+    "url" : "/transacao-pix",
+    "method" : "POST",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"codigoTrancacao\":null,\"codigoPessoa\":\"fbc5fbc7-9b55-4058-af41-fa94ae092ae8\",\"valorTrancacao\":30000.5,\"dataTrancacao\":\"2026-05-25T20:31:28.538\",\"codigoBeneficiario\":\"c4a954e4-5d08-459c-b5b4-5ce9aa251140\",\"mensagemTransacao\":\"PIX para compra de carro\"}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "c52a2f6f-cc99-4689-86be-d58e9274904e",
+    "headers" : {
+      "Keep-Alive" : "timeout=60",
+      "Date" : "Fri, 19 Jun 2026 15:30:11 GMT",
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "be97a402-33d2-4e57-9421-28c5befae5b8",
+  "persistent" : true,
+  "insertionIndex" : 1
+}

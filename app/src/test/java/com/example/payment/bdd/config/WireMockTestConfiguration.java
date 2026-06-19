@@ -9,16 +9,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WireMockTestConfiguration {
 
-    @Value("${wiremock.port}")
-    private Integer portWiremock;
-
-
     @Bean(initMethod = "start", destroyMethod = "stop")
-    public WireMockServer wireMockServer() {
+    public WireMockServer wireMockServer(
+            @Value("${wiremock.port}") Integer portWiremock,
+            @Value("${wiremock.files-classpath}") String fileClasspath) {
+
         return new WireMockServer(
                 WireMockConfiguration
                         .options()
                         .port(portWiremock)
-                        .usingFilesUnderClasspath("wiremock"));
+                        .usingFilesUnderClasspath(fileClasspath));
     }
 }

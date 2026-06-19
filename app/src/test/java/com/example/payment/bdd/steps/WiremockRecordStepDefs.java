@@ -3,15 +3,28 @@ package com.example.payment.bdd.steps;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 
 public class WiremockRecordStepDefs {
 
+    private static final String URL_RECORD_START = "http://localhost:%s/__admin/recordings/start";
+    public static final String URL_RECORD_STOP = "http://localhost:%s/__admin/recordings/stop";
+    public static final String URL_RECORD_STATUS = "http://localhost:%s/__admin/recordings/status";
+
+    private final Integer portWiremock;
+
+    private final String targetUrl;
+
     private final RestTemplate restTemplate;
 
-    public WiremockRecordStepDefs() {
+    public WiremockRecordStepDefs(
+            @Value("${wiremock.port}") Integer portWiremock,
+            @Value("${wiremock.record.target-url}") String targetUrl) {
+        this.portWiremock = portWiremock;
+        this.targetUrl = targetUrl;
         this.restTemplate = new RestTemplate();
     }
 
@@ -19,10 +32,10 @@ public class WiremockRecordStepDefs {
     @Before(value = "@record", order = 0)
     public void startRecording(Scenario scenario) {
         restTemplate.postForEntity(
-                "http://localhost:8089/__admin/recordings/start",
+                URL_RECORD_START.formatted(portWiremock),
                 Map.of(
                         "targetBaseUrl",
-                        "http://localhost:8000"),
+                        targetUrl),
                 String.class
         );
 
@@ -33,7 +46,7 @@ public class WiremockRecordStepDefs {
     public void stopRecording(Scenario scenario) {
 
         restTemplate.postForEntity(
-                "http://localhost:8089/__admin/recordings/stop",
+                URL_RECORD_STOP.formatted(portWiremock),
                 null,
                 String.class
         );
@@ -44,7 +57,7 @@ public class WiremockRecordStepDefs {
     private void statusWireMockRecording(Scenario scenario) {
         var status =
                 restTemplate.getForObject(
-                        "http://localhost:8089/__admin/recordings/status",
+                        URL_RECORD_STATUS.formatted(portWiremock),
                         String.class
                 );
 
