@@ -13,6 +13,7 @@ public class WiremockRecordStepDefs {
     private static final String URL_RECORD_START = "http://localhost:%s/__admin/recordings/start";
     public static final String URL_RECORD_STOP = "http://localhost:%s/__admin/recordings/stop";
     public static final String URL_RECORD_STATUS = "http://localhost:%s/__admin/recordings/status";
+    private static final int AFTER_DEFAULT_HOOKS = 20_000;
 
     private final Integer portWiremock;
 
@@ -29,7 +30,7 @@ public class WiremockRecordStepDefs {
     }
 
 
-    @Before(value = "@record", order = 0)
+    @Before(value = "@record", order = AFTER_DEFAULT_HOOKS)
     public void startRecording(Scenario scenario) {
         restTemplate.postForEntity(
                 URL_RECORD_START.formatted(portWiremock),
@@ -42,7 +43,7 @@ public class WiremockRecordStepDefs {
         statusWireMockRecording(scenario);
     }
 
-    @After(value = "@record", order = 0)
+    @After(value = "@record", order = AFTER_DEFAULT_HOOKS)
     public void stopRecording(Scenario scenario) {
 
         restTemplate.postForEntity(

@@ -6,7 +6,7 @@ Scenario: Criar transação Pix com sucesso
   """
   {
     "codigoPessoa": "fbc5fbc7-9b55-4058-af41-fa94ae092ae8",
-    "valorTrancacao": 30000.5,
+    "valorTrancacao":60000.5,
     "dataTrancacao": "2026-05-25T20:31:28.538Z",
     "codigoBeneficiario": "c4a954e4-5d08-459c-b5b4-5ce9aa251140",
     "mensagemTransacao": "PIX para compra de carro"
