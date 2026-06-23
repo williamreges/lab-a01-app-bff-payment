@@ -12,12 +12,12 @@ public class WireMockTestConfiguration {
     @Bean(initMethod = "start", destroyMethod = "stop")
     public WireMockServer wireMockServer(
             @Value("${wiremock.port}") Integer portWiremock,
-            @Value("${wiremock.files-classpath}") String fileClasspath) {
+            @Value("${wiremock.files-directory}") String filesDirectory) {
 
         return new WireMockServer(
                 WireMockConfiguration
                         .options()
                         .port(portWiremock)
-                        .usingFilesUnderClasspath(fileClasspath));
+                        .usingFilesUnderDirectory(filesDirectory));
     }
 }

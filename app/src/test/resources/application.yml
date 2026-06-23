@@ -23,7 +23,7 @@ name:
 
 wiremock:
   port: 8089
-  files-classpath: wiremock
+  files-directory: src/test/resources/wiremock
   record:
     target-url: http://localhost:8000
     make-stubs-persistent: true
