@@ -1,0 +1,23 @@
+{
+  "id" : "a5e1884b-d235-483b-967b-f1b2b68f2392",
+  "name" : "transacao-pix_05c630a1-bed2-4c27-b0cc-059a4b790e4d",
+  "request" : {
+    "url" : "/transacao-pix/05c630a1-bed2-4c27-b0cc-059a4b790e4d",
+    "method" : "PUT",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"codigoTrancacao\":null,\"codigoPessoa\":\"fbc5fbc7-9b55-4058-af41-fa94ae092ae8\",\"valorTrancacao\":50000.50,\"dataTrancacao\":\"2026-04-30T00:00:00\",\"codigoBeneficiario\":\"6444c4e8-9e0e-45cc-8c09-5cec0534c012\",\"mensagemTransacao\":\"PIX teste de atualizacao\"}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "headers" : {
+      "Keep-Alive" : "timeout=60",
+      "Date" : "Tue, 23 Jun 2026 23:02:10 GMT"
+    }
+  },
+  "uuid" : "a5e1884b-d235-483b-967b-f1b2b68f2392",
+  "persistent" : true,
+  "insertionIndex" : 5
+}

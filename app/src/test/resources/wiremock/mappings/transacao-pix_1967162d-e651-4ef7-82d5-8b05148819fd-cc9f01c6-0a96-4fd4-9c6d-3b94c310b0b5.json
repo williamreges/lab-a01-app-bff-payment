@@ -1,0 +1,25 @@
+{
+  "id" : "cc9f01c6-0a96-4fd4-9c6d-3b94c310b0b5",
+  "name" : "transacao-pix_1967162d-e651-4ef7-82d5-8b05148819fd",
+  "request" : {
+    "url" : "/transacao-pix/1967162d-e651-4ef7-82d5-8b05148819fd",
+    "method" : "PUT",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"codigoTrancacao\":null,\"codigoPessoa\":\"fbc5fbc7-9b55-4058-af41-fa94ae092ae8\",\"valorTrancacao\":50000.50,\"dataTrancacao\":\"2026-04-30T00:00:00\",\"codigoBeneficiario\":\"6444c4e8-9e0e-45cc-8c09-5cec0534c012\",\"mensagemTransacao\":\"PIX teste de atualizacao com erro\"}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response" : {
+    "status" : 404,
+    "body" : "{\"messages\":[{\"code\":\"404\",\"message\":\"Resource not found: 1967162d-e651-4ef7-82d5-8b05148819fd\"}]}",
+    "headers" : {
+      "Keep-Alive" : "timeout=60",
+      "Date" : "Tue, 23 Jun 2026 23:02:10 GMT",
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "cc9f01c6-0a96-4fd4-9c6d-3b94c310b0b5",
+  "persistent" : true,
+  "insertionIndex" : 13
+}
