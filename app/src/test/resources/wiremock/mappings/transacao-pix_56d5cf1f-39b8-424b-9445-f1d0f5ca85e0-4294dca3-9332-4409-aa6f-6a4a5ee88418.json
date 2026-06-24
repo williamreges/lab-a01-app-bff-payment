@@ -1,0 +1,18 @@
+{
+  "id" : "4294dca3-9332-4409-aa6f-6a4a5ee88418",
+  "name" : "transacao-pix_56d5cf1f-39b8-424b-9445-f1d0f5ca85e0",
+  "request" : {
+    "url" : "/transacao-pix/56d5cf1f-39b8-424b-9445-f1d0f5ca85e0",
+    "method" : "DELETE"
+  },
+  "response" : {
+    "status" : 200,
+    "headers" : {
+      "Keep-Alive" : "timeout=60",
+      "Date" : "Wed, 24 Jun 2026 18:58:47 GMT"
+    }
+  },
+  "uuid" : "4294dca3-9332-4409-aa6f-6a4a5ee88418",
+  "persistent" : true,
+  "insertionIndex" : 21
+}
